@@ -27,13 +27,14 @@ import java.util.List;
 import java.util.Locale;
 
 public class User_Servlet extends HttpServlet {
+
     private static final long serialVersionUID = 1L;
 
     private static final String DATA_DIRECTORY = "data";
     private static final int MAX_MEMORY_SIZE = 1024 * 1024 * 2;
     private static final int MAX_REQUEST_SIZE = 1024 * 1024;
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -45,7 +46,6 @@ public class User_Servlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet UploadServlet at " + request.getContextPath() + "</h1>");
-            out.println( "<input type=\"file\" id=\"myfile\" name\"myfile\">");
             out.println("</body>");
             out.println("</html>");
         } finally {
@@ -57,6 +57,9 @@ public class User_Servlet extends HttpServlet {
             throws ServletException, IOException {
         ServletContext scx = getServletContext();
         Connection dbConnection = (Connection) scx.getAttribute("dbConnection");
+        //processRequest(request, response);
+        //PrintWriter out = response.getWriter();
+        // Check that we have a file upload request
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 
         if (!isMultipart) {
@@ -111,7 +114,7 @@ public class User_Servlet extends HttpServlet {
                     for(int i=1; i<=sheet.getLastRowNum(); i++)
                     {
                         try {
-                            PreparedStatement ps = dbConnection.prepareStatement("insert into users(name,age,town) values(?,?,?)");
+                            PreparedStatement ps = dbConnection.prepareStatement("insert into user(name,age,town) values(?,?,?)");
                             row = (Row) sheet.getRow(i);
                             ps.setString(1, "" + formatter.formatCellValue(sheet.getRow(i).getCell(0)));
                             ps.setString(2, "" + formatter.formatCellValue(sheet.getRow(i).getCell(1)));
@@ -124,8 +127,8 @@ public class User_Servlet extends HttpServlet {
                 }
             }
 
-            request.setAttribute("message" , "Your data has been uploaded!");
-            // displays done.jsp page after upload finished
+            PrintWriter out = response.getWriter();
+            out.println("data uploaded successfully");
 
 
         } catch (FileUploadException ex) {
@@ -134,4 +137,5 @@ public class User_Servlet extends HttpServlet {
             throw new ServletException(ex);
         }
     }
+
 }
