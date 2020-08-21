@@ -8,12 +8,6 @@
   <name>excel-upload Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-    <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
-      <version>${jakartaee}</version>
-      <scope>provided</scope>
-    </dependency>
 
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -36,23 +30,6 @@
       <version>2.9.10.5</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi-ooxml</artifactId>
-      <version>${poi.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jxls</groupId>
-      <artifactId>jxls-jexcel</artifactId>
-      <version>${jexcel.version}</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>commons-logging</artifactId>
-          <groupId>commons-logging</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
 
     <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
     <dependency>
@@ -67,7 +44,11 @@
       <artifactId>commons-io</artifactId>
       <version>2.6</version>
     </dependency>
-
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>4.1.0</version>
+    </dependency>
   </dependencies>
 
   <properties>

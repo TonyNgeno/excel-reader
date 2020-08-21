@@ -6,25 +6,21 @@
 </head>
 <body>
 <h2>Upload data to server using servlet</h2>
-<form id="form">
+<form id="form" action="UsersServlet">
     <label for="myfile">Select an excel file:</label>
     <input type="file" id="myfile" name="myfile"><br><br>
     <input type="submit">
+
 </form>
-<div id="excel-content">
+<!--<button onclick="showName()">Clicks Me</button>
+<p id="name"> </p>
+<div id="excel-content">-->
 
 </div>
 <script>
-    $('#myfile').change(function(e){
-        var reader = new FileReader();
-        reader.readAsArrayBuffer(e.target.files[0]);
-        reader.onload = function(e) {
-            var data = new Uint8Array(reader.result);
-            var wb = XLSX.read(data,{type:'array'});
-            var htmlstr = XLSX.write(wb,{sheet:"sheet no1", type:'binary',bookType:'html'});
-            $('#excel-content')[0].innerHTML += htmlstr;
-        }
-    });
+function showName() {
+  document.getElementById("name").innerHTML = "Tony";
+  }
 </script>
 
 
