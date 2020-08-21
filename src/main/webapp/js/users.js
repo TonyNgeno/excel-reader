@@ -1,6 +1,6 @@
 (function(){
     excelJsLib.submit.call({
-        dataUrl: 'user',
+        dataUrl: 'users',
 
     });
 })();

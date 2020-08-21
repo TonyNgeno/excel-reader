@@ -56,9 +56,6 @@ public class User_Servlet extends HttpServlet {
             throws ServletException, IOException {
         ServletContext scx = getServletContext();
         Connection dbConnection = (Connection) scx.getAttribute("dbConnection");
-        //processRequest(request, response);
-        //PrintWriter out = response.getWriter();
-        // Check that we have a file upload request
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 
         if (!isMultipart) {
