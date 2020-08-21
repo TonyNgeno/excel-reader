@@ -1,28 +1,15 @@
 <html>
 <head>
-    <script src="jquery-2.1.4.js"></script>
-    <script lang="javascript" src="xlsx.full.min.js"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <title>Welcome</title>
 </head>
+
 <body>
-<h2>Upload data to server using servlet</h2>
-<form id="form" action="UsersServlet">
-    <label for="myfile">Select an excel file:</label>
-    <input type="file" id="myfile" name="myfile"><br><br>
-    <input type="submit">
-
+<h3>File Upload:</h3>
+Select a file to upload: <br />
+<form action = "FileHandler" method = "post" enctype = "multipart/form-data">
+    <input type = "file" name = "file" size = "50" />
+    <br />
+    <input type = "submit" value = "Upload File" />
 </form>
-<!--<button onclick="showName()">Clicks Me</button>
-<p id="name"> </p>
-<div id="excel-content">-->
-
-</div>
-<script>
-function showName() {
-  document.getElementById("name").innerHTML = "Tony";
-  }
-</script>
-
-
 </body>
 </html>

@@ -26,61 +26,61 @@ import java.util.Iterator;
 public class UsersServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    ServletContext servcont = getServletContext();
-    Connection dbConnection = (Connection) servcont.getAttribute("dbConnection");
-    response.setContentType("text/html");
-    String excelFilePath = "./users.xlsx";
-    int batchSize = 20;
-    Connection connection = null;
-    try {
-        FileInputStream inputStream = new FileInputStream(excelFilePath);
-        Workbook workbook = new XSSFWorkbook(inputStream);
-        Sheet firstSheet = workbook.getSheetAt(0);
-        Iterator<Row> rowIterator = firstSheet.iterator();
-        PreparedStatement statement = dbConnection.prepareStatement("insert into users(name, age, town) values(?, ?, ?)");
+        ServletContext servcont = getServletContext();
+        Connection dbConnection = (Connection) servcont.getAttribute("dbConnection");
+        response.setContentType("text/html");
+        String excelFilePath = "./users.xlsx";
+        int batchSize = 20;
+        Connection connection = null;
+        try {
+            FileInputStream inputStream = new FileInputStream(excelFilePath);
+            Workbook workbook = new XSSFWorkbook(inputStream);
+            Sheet firstSheet = workbook.getSheetAt(0);
+            Iterator<Row> rowIterator = firstSheet.iterator();
+            PreparedStatement statement = dbConnection.prepareStatement("insert into users(name, age, town) values(?, ?, ?)");
 
-        int count = 0;
+            int count = 0;
 
-        while (rowIterator.hasNext()) {
-            Row nextRow = rowIterator.next();
-            Iterator<Cell> cellIterator = nextRow.cellIterator();
+            while (rowIterator.hasNext()) {
+                Row nextRow = rowIterator.next();
+                Iterator<Cell> cellIterator = nextRow.cellIterator();
 
-            while (cellIterator.hasNext()) {
-                Cell nextCell = cellIterator.next();
+                while (cellIterator.hasNext()) {
+                    Cell nextCell = cellIterator.next();
 
-                int columnIndex = nextCell.getColumnIndex();
+                    int columnIndex = nextCell.getColumnIndex();
 
-                switch (columnIndex) {
-                    case 0:
-                        String name = nextCell.getStringCellValue();
-                        statement.setString(1, name);
-                        break;
-                    case 1:
-                        int age = (int) nextCell.getNumericCellValue();
-                        statement.setInt(2, age);
-                        break;
-                    case 2:
-                        String town = nextCell.getStringCellValue();
-                        statement.setString(3, town);
-                        break;
+                    switch (columnIndex) {
+                        case 0:
+                            String name = nextCell.getStringCellValue();
+                            statement.setString(1, name);
+                            break;
+                        case 1:
+                            int age = (int) nextCell.getNumericCellValue();
+                            statement.setInt(2, age);
+                            break;
+                        case 2:
+                            String town = nextCell.getStringCellValue();
+                            statement.setString(3, town);
+                            break;
+                    }
+
                 }
+                statement.addBatch();
+                if (count % batchSize == 0) {
+                    statement.executeBatch();
+                }
+            }
 
-            }
-            statement.addBatch();
-            if (count % batchSize == 0) {
-                statement.executeBatch();
-            }
+            workbook.close();
+            statement.executeBatch();
+            dbConnection.commit();
+            dbConnection.close();
+
+            rowIterator.next();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
-
-        workbook.close();
-        statement.executeBatch();
-        dbConnection.commit();
-        dbConnection.close();
-
-        rowIterator.next();
-    } catch (SQLException throwables) {
-        throwables.printStackTrace();
-    }
 
 
         ServletContext context = getServletContext();
