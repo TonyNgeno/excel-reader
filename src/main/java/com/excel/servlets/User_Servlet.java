@@ -112,9 +112,9 @@ public class User_Servlet extends HttpServlet {
                         try {
                             PreparedStatement ps = dbConnection.prepareStatement("insert into users(name,age,town) values(?,?,?)");
                             row = (Row) sheet.getRow(i);
-                            ps.setString(1, "" + formatter.formatCellValue(row.getCell(0)));
-                            ps.setString(2, "" + formatter.formatCellValue(row.getCell(1)));
-                            ps.setString(3, "" + formatter.formatCellValue(row.getCell(2)));
+                            ps.setString(1, "" + formatter.formatCellValue(sheet.getRow(i).getCell(0)));
+                            ps.setString(2, "" + formatter.formatCellValue(sheet.getRow(i).getCell(1)));
+                            ps.setString(3, "" + formatter.formatCellValue(sheet.getRow(i).getCell(2)));
                             ps.executeUpdate();
                         } catch (SQLException throwables) {
                             throwables.printStackTrace();
