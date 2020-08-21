@@ -22,34 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71ec5933-519b-46d6-825f-57f15254be79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/excel/listeners/FileLocContextListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/excel/apps/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/excel/model/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/excel/model/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/excel/servlets/FileHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/excel/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/excel/servlets/UsersServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/excel/utilities/DatabaseBootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/excel/utilities/DatabaseBootstrap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/excel/apps/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/excel/model/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/excel/model/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/excel/servlets/FileHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/excel/servlets/UsersServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/excel/servlets/UsersServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/excel/utilities/DatabaseBootstrap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/excel/utilities/DatabaseBootstrap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/excel-upload.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/excel-upload.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/excel-upload/WEB-INF/classes/com/excel/apps/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/excel-upload/WEB-INF/classes/com/excel/model/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/excel-upload/WEB-INF/classes/com/excel/model/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/excel-upload/WEB-INF/classes/com/excel/servlets/FileHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/excel-upload/WEB-INF/classes/com/excel/servlets/UsersServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/excel-upload/WEB-INF/classes/com/excel/servlets/UsersServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/excel-upload/WEB-INF/classes/com/excel/utilities/DatabaseBootstrap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/excel-upload/WEB-INF/classes/com/excel/utilities/DatabaseBootstrap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/excel-upload/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/excel-upload/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/excel-upload/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/excel-upload/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/excel-upload/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="71ec5933-519b-46d6-825f-57f15254be79" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
