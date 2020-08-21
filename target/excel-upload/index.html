@@ -1,12 +1,19 @@
 <html>
-<head></head>
+<head>
+    <script src="jquery-2.1.4.js"></script>
+    <script lang="javascript" src="xlsx.full.min.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
 <body>
-<form action="FileHandler" method="post" enctype="multipart/form-data">
-    Select File to Upload:<input type="file" name="fileName">
-    <br>
-    <input type="submit" value="Save">
+<h2>Upload data to server using servlet</h2>
+<form id="form">
+    <label for="myfile">Select an excel file:</label>
+    <input type="file" id="myfile" name="myfile"><br><br>
+    <input type="submit">
 </form>
-<div id="module-content"></div>
+<div id="excel-content">
+
+</div>
 <script>
     $('#myfile').change(function(e){
         var reader = new FileReader();
