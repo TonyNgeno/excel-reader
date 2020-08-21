@@ -31,7 +31,7 @@ public class DatabaseBootstrap implements ServletContextListener {
             statement2 = dbConnection2.connect().createStatement();
 
             //create table
-            statement2.execute("create table if not exists users(name varchar(255), age int(10), town varchar(255))");
+            statement2.execute("create table if not exists users(name varchar(255), age int, town varchar(255))");
 
             sce.getServletContext().setAttribute("dbConnection", dbConnection2.connect());
 

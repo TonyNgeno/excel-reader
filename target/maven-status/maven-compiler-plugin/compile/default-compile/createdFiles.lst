@@ -1,6 +1,5 @@
 com/excel/servlets/UsersServlet.class
 com/excel/utilities/DbConnection.class
-com/excel/apps/App.class
 com/excel/model/Users.class
-com/excel/servlets/FileHandler.class
+com/excel/listeners/FileLocContextListener.class
 com/excel/utilities/DatabaseBootstrap.class

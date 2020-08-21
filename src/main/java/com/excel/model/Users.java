@@ -2,15 +2,17 @@ package com.excel.model;
 
 public class Users {
 
-    private String name;
-    private int age;
-    private String town;
+    String name;
+    double age;
+    String town;
 
-    public Users(String name, int age, String town) {
+    public Users(String name, String town, double age) {
         this.name = name;
-        this.age = age;
         this.town = town;
+        this.age = age;
     }
+
+
 
     public String getName() {
         return name;
@@ -20,11 +22,11 @@ public class Users {
         this.name = name;
     }
 
-    public int getAge() {
+    public double getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(double age) {
         this.age = age;
     }
 
