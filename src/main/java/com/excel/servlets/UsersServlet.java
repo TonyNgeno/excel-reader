@@ -52,11 +52,8 @@ public class UsersServlet extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ServletContext scx = getServletContext();
-        Connection dbConnection = (Connection) scx.getAttribute("dbConnection");
-        //processRequest(request, response);
-        //PrintWriter out = response.getWriter();
-        // Check that we have a file upload request
+        ServletContext scx = getServletContext();Connection dbConnection = (Connection) scx.getAttribute("dbConnection");
+
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 
         if (!isMultipart) {
@@ -66,24 +63,16 @@ public class UsersServlet extends HttpServlet {
         // Create a factory for disk-based file items
         DiskFileItemFactory factory = new DiskFileItemFactory();
 
-        // Sets the size threshold beyond which files are written directly to
-        // disk.
         factory.setSizeThreshold(MAX_MEMORY_SIZE);
 
-        // Sets the directory used to temporarily store files that are larger
-        // than the configured size threshold. We use temporary directory for
-        // java
         factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
 
-        // constructs the folder where uploaded file will be stored
         String uploadFolder = getServletContext().getRealPath("")
                 + File.separator + DATA_DIRECTORY;
 
-        // Create a new file upload handler
         ServletFileUpload upload = new ServletFileUpload(factory);
 
 
-        // Set overall request size constraint
         upload.setSizeMax(MAX_REQUEST_SIZE);
 
         try {

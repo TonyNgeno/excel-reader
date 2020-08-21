@@ -18,7 +18,6 @@ public class FileLocContextListener implements ServletContextListener {
         ctx.setAttribute("FILES_DIR", rootPath + File.separator + relativePath);
 }
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        //do cleanup if needed
     }
 
 }
